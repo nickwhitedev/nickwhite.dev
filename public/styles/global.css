@@ -1,0 +1,23 @@
+html {
+  height: 100vh;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  padding: 1.5em;
+
+  font-family: var(--font-system);
+  font-weight: normal;
+}
+
+a, a:hover {
+  color: var(--link-color);
+}
