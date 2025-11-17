@@ -2,6 +2,9 @@
   /* https://modernfontstacks.com/
      neo-grotesque font */
   --font-system: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  /* https://modernfontstacks.com/
+     monospace slab serif */
+  --font-flair: 'Nimbus Mono PS', 'Courier New', monospace;
 
   --background-color: white;
 
