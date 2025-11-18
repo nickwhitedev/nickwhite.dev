@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.0.1] - 2025-11-18
+### Fixed
+- Broken bluesky link fixed
+
 ## [1.0.0] - 2025-11-17
 ### Added
 - Use h-card to follow IndieWeb standards
