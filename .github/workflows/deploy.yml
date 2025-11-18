@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Copy files via SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          HOST_IP_ADDRESS: ${{ secrets.WEB_HOST_IP_ADDRESS }}
+          HOST_USERNAME: ${{ secrets.WEB_HOST_USERNAME }}
+          HOST_DIRECTORY: ${{ secrets.WEB_HOST_DIRECTORY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          rsync -avz --delete ./public/ $HOST_USERNAME@$HOST_IP_ADDRESS:$HOST_DIRECTORY -e "ssh -p 22 -o StrictHostKeyChecking=no"
