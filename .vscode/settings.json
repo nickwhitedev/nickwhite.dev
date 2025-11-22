@@ -1,5 +1,6 @@
 {
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "livePreview.serverRoot": "public"
+    "livePreview.serverRoot": "public",
+    "editor.formatOnSave": true
 }
