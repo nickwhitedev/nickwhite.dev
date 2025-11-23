@@ -56,8 +56,10 @@ p {
 }
 
 a,
-a:hover {
+a:hover,
+article header a {
   color: var(--link-color);
+  text-decoration: underline;
 }
 
 small {
