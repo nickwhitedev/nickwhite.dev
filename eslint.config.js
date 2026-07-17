@@ -1,9 +1,10 @@
 /* eslint-disable no-undef */
-const globals = require("globals");
-const js = require("@eslint/js");
+import { defineConfig } from '@eslint/configs'
+import globals from 'globals'
+import js from '@eslint/js'
 
-module.exports = [
-    js.configs.recommended, 
+export default defineConfig([
+    js.configs.recommended,
     {
         languageOptions: {
             globals: {
@@ -12,6 +13,9 @@ module.exports = [
             },
             ecmaVersion: 2022,
             sourceType: "module",
+        },
+        rules: {
+            'max-len': 100,
         }
     },
-];
+])

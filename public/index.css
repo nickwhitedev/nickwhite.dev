@@ -1,3 +1,162 @@
-@import "styles/reset.css";
-@import "styles/variables.css";
-@import "styles/global.css";
+/* 
+    Chose to use css directly in index.css with a link tag over @imports from 
+    index.css to separate files because @imports made the css load non-blocking 
+    somehow (at least in Firefox).
+
+    region comments are for code collapsing in vscode
+*/
+
+/* #region reset */
+/* generic minimal CSS reset
+    taken from https://plainvanillaweb.com/pages/styling.html
+    inspiration: https://www.digitalocean.com/community/tutorials/css-minimal-css-reset 
+*/
+
+:root {
+    box-sizing: border-box;
+    line-height: 1.4;
+    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+img,
+video,
+iframe {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+/* #endregion reset */
+
+/* #region variables */
+:root {
+    /* https://modernfontstacks.com/
+     neo-grotesque font */
+    --font-system: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    /* https://modernfontstacks.com/
+     monospace slab serif */
+    --font-flair: 'Nimbus Mono PS', 'Courier New', monospace;
+
+    --background-color: white;
+
+    --text-color: black;
+
+    --link-color: black;
+}
+
+/* #endregion variables */
+
+/* #region global */
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100%;
+    width: fit-content;
+    padding: 7% 10% 1.5em;
+
+    font-family: var(--font-system);
+    font-weight: normal;
+}
+
+header>#title,
+h1,
+h2,
+h3 {
+    font-family: var(--font-flair);
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem
+}
+
+a,
+a:hover,
+article header a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+small {
+    font-size: 0.8rem;
+}
+
+header {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 3rem;
+}
+
+#title {
+    font-size: 3rem;
+}
+
+/* #endregion global */
